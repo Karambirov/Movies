@@ -13,15 +13,16 @@ NSString * const baseUrlString = @"https://api.themoviedb.org";
 
 @implementation EKNetworkingService
 
-+ (NSURL *)createUrlWithPath:(NSString *)path withQueryItems:(NSArray<NSURLQueryItem *> *)queryItems {
+- (NSURL *)createUrlWithPath:(NSString *)path withQueryItems:(NSArray<NSURLQueryItem *> *)queryItems {
     NSURLComponents *urlComponents = [NSURLComponents componentsWithString:baseUrlString];
     urlComponents.path = path;
-    urlComponents.queryItems = queryItems;
+    urlComponents.queryItems = @[[NSURLQueryItem queryItemWithName:@"api_key" value:apiKey]];
+    [urlComponents.queryItems arrayByAddingObjectsFromArray:queryItems];
     NSLog(@"URL: %@", urlComponents.URL);
     return urlComponents.URL;
 }
 
-+ (NSMutableURLRequest *)createRequestWithMethod:(NSString *)method forURL:(NSURL *)url {
+- (NSMutableURLRequest *)createRequestWithMethod:(NSString *)method forURL:(NSURL *)url {
 
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url
                                                            cachePolicy:NSURLRequestReloadIgnoringCacheData
@@ -31,7 +32,7 @@ NSString * const baseUrlString = @"https://api.themoviedb.org";
 
 }
 
-+ (void)executeRequest:(NSURLRequest *)request withCompletionHandler:(void (^)(id responseData, NSError *error))completionHandler {
+- (void)executeRequest:(NSURLRequest *)request withCompletionHandler:(void (^)(id responseData, NSError *error))completionHandler {
 
     NSURLSession *session = [NSURLSession sharedSession];
     NSURLSessionDataTask *dataTask = [session dataTaskWithRequest:request

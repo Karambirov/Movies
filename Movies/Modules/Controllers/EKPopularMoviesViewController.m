@@ -24,7 +24,7 @@ NSString * const cellIdentifier = @"PopularMovieCell";
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self initialSetup];
-    [self fetchPopularMovies];
+//    [self fetchPopularMovies];
 }
 
 #pragma mark - TableView
@@ -60,47 +60,6 @@ NSString * const cellIdentifier = @"PopularMovieCell";
         //        make.edges.equalTo(self.view.mas_safeAreaLayoutGuide);
         make.edges.equalTo(self.view);
     }];
-}
-
-- (void)fetchPopularMovies {
-    NSURLComponents *urlComponents = [NSURLComponents componentsWithString:@"https://api.themoviedb.org"];
-    urlComponents.path = @"/3/discover/movie";
-    urlComponents.queryItems = @[[NSURLQueryItem queryItemWithName:@"api_key" value:apiKey],
-                                 [NSURLQueryItem queryItemWithName:@"sort_by" value:@"popularity.desc"]];
-    NSLog(@"URL: %@", urlComponents.URL);
-
-    NSURLSession *session = [NSURLSession sharedSession];
-    NSURLSessionDataTask *dataTask = [session dataTaskWithURL:urlComponents.URL completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
-
-        if (error) {
-            NSLog(@"An error occured: %@", [error localizedDescription]);
-            return;
-        }
-
-        if ([response isKindOfClass:NSHTTPURLResponse.class]) {
-            NSInteger statusCode = [(NSHTTPURLResponse *)response statusCode];
-            if (statusCode != 200) {
-                NSLog(@"An error occured. Status code: %ld", (long)statusCode);
-                return;
-            }
-        }
-
-        NSError *parsingError;
-        NSDictionary *json = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:&parsingError];
-
-        if (parsingError) {
-            NSLog(@"An error occured: %@", [parsingError localizedDescription]);
-            return;
-        }
-
-        self.movies = [EKMovie moviesFromDictionaries:json[@"results"]];
-
-        dispatch_async(dispatch_get_main_queue(), ^(void){
-            [self.tableView reloadData];
-        });
-    }];
-
-    [dataTask resume];
 }
 
 @end

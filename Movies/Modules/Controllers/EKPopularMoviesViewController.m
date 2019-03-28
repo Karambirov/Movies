@@ -15,10 +15,8 @@ NSString * const cellIdentifier = @"PopularMovieCell";
 NSString * const apiKey = @"f5524bb2a3cfdc23a41b80cc6ec1ad4c";
 
 @interface EKPopularMoviesViewController () <UITableViewDataSource, UITableViewDelegate>
-
 @property (nonatomic) UITableView *tableView;
 @property (nonatomic) NSArray<EKMovie *> *movies;
-
 @end
 
 @implementation EKPopularMoviesViewController

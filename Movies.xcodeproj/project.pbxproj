@@ -13,6 +13,7 @@
 		AAFE17D4224D0B7E00486D7F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AAFE17D2224D0B7E00486D7F /* LaunchScreen.storyboard */; };
 		AAFE17D7224D0B7E00486D7F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = AAFE17D6224D0B7E00486D7F /* main.m */; };
 		AAFE17E6224D1A1E00486D7F /* EKMovie.m in Sources */ = {isa = PBXBuildFile; fileRef = AAFE17E5224D1A1E00486D7F /* EKMovie.m */; };
+		AAFE17EA224D5F9B00486D7F /* EKNetworkingService.m in Sources */ = {isa = PBXBuildFile; fileRef = AAFE17E9224D5F9B00486D7F /* EKNetworkingService.m */; };
 		E0E20D434EC33C2716EA8A10 /* libPods-Movies.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 609AED2461BE4389B776AE74 /* libPods-Movies.a */; };
 /* End PBXBuildFile section */
 
@@ -30,6 +31,8 @@
 		AAFE17D6224D0B7E00486D7F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		AAFE17E4224D1A1E00486D7F /* EKMovie.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EKMovie.h; sourceTree = "<group>"; };
 		AAFE17E5224D1A1E00486D7F /* EKMovie.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EKMovie.m; sourceTree = "<group>"; };
+		AAFE17E8224D5F9B00486D7F /* EKNetworkingService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EKNetworkingService.h; sourceTree = "<group>"; };
+		AAFE17E9224D5F9B00486D7F /* EKNetworkingService.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EKNetworkingService.m; sourceTree = "<group>"; };
 		E83C6D8B22E3697789EDA4EF /* Pods-Movies.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Movies.debug.xcconfig"; path = "Target Support Files/Pods-Movies/Pods-Movies.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -59,7 +62,6 @@
 				E83C6D8B22E3697789EDA4EF /* Pods-Movies.debug.xcconfig */,
 				887FA78712C6FCDF0EE21E94 /* Pods-Movies.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -84,6 +86,7 @@
 		AAFE17C6224D0B7C00486D7F /* Movies */ = {
 			isa = PBXGroup;
 			children = (
+				AAFE17E7224D5F8500486D7F /* Services */,
 				AAFE17E3224D1A0400486D7F /* Models */,
 				AAFE17E1224D0CD500486D7F /* Modules */,
 				AAFE17DD224D0C3300486D7F /* Other */,
@@ -152,6 +155,15 @@
 				AAFE17E5224D1A1E00486D7F /* EKMovie.m */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		AAFE17E7224D5F8500486D7F /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				AAFE17E8224D5F9B00486D7F /* EKNetworkingService.h */,
+				AAFE17E9224D5F9B00486D7F /* EKNetworkingService.m */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -251,6 +263,7 @@
 			files = (
 				AAFE17E6224D1A1E00486D7F /* EKMovie.m in Sources */,
 				AAFE17CC224D0B7C00486D7F /* EKPopularMoviesViewController.m in Sources */,
+				AAFE17EA224D5F9B00486D7F /* EKNetworkingService.m in Sources */,
 				AAFE17D7224D0B7E00486D7F /* main.m in Sources */,
 				AAFE17C9224D0B7C00486D7F /* AppDelegate.m in Sources */,
 			);

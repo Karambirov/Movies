@@ -8,10 +8,12 @@
 
 #import <Foundation/Foundation.h>
 
-NS_ASSUME_NONNULL_BEGIN
-
 @interface EKMovie : NSObject
 
-@end
+@property (nonatomic) NSString *title;
 
-NS_ASSUME_NONNULL_END
+- (instancetype)initWithDictionary:(NSDictionary *)dictionary;
+
++ (NSArray *)moviesFromDictionaries:(NSArray *)movieDictionaries;
+
+@end

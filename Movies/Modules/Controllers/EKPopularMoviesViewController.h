@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  EKPopularMoviesViewController.h
 //  Movies
 //
 //  Created by Eugene Karambirov on 28/03/2019.
@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
+@interface EKPopularMoviesViewController : UIViewController
 
 
 @end

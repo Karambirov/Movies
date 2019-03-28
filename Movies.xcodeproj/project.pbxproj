@@ -8,8 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		AAFE17C9224D0B7C00486D7F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AAFE17C8224D0B7C00486D7F /* AppDelegate.m */; };
-		AAFE17CC224D0B7C00486D7F /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AAFE17CB224D0B7C00486D7F /* ViewController.m */; };
-		AAFE17CF224D0B7C00486D7F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AAFE17CD224D0B7C00486D7F /* Main.storyboard */; };
+		AAFE17CC224D0B7C00486D7F /* EKPopularMoviesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AAFE17CB224D0B7C00486D7F /* EKPopularMoviesViewController.m */; };
 		AAFE17D1224D0B7E00486D7F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AAFE17D0224D0B7E00486D7F /* Assets.xcassets */; };
 		AAFE17D4224D0B7E00486D7F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AAFE17D2224D0B7E00486D7F /* LaunchScreen.storyboard */; };
 		AAFE17D7224D0B7E00486D7F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = AAFE17D6224D0B7E00486D7F /* main.m */; };
@@ -19,9 +18,8 @@
 		AAFE17C4224D0B7C00486D7F /* Movies.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Movies.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AAFE17C7224D0B7C00486D7F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		AAFE17C8224D0B7C00486D7F /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		AAFE17CA224D0B7C00486D7F /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		AAFE17CB224D0B7C00486D7F /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		AAFE17CE224D0B7C00486D7F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		AAFE17CA224D0B7C00486D7F /* EKPopularMoviesViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EKPopularMoviesViewController.h; sourceTree = "<group>"; };
+		AAFE17CB224D0B7C00486D7F /* EKPopularMoviesViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EKPopularMoviesViewController.m; sourceTree = "<group>"; };
 		AAFE17D0224D0B7E00486D7F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AAFE17D3224D0B7E00486D7F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AAFE17D5224D0B7E00486D7F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -58,17 +56,64 @@
 		AAFE17C6224D0B7C00486D7F /* Movies */ = {
 			isa = PBXGroup;
 			children = (
-				AAFE17C7224D0B7C00486D7F /* AppDelegate.h */,
-				AAFE17C8224D0B7C00486D7F /* AppDelegate.m */,
-				AAFE17CA224D0B7C00486D7F /* ViewController.h */,
-				AAFE17CB224D0B7C00486D7F /* ViewController.m */,
-				AAFE17CD224D0B7C00486D7F /* Main.storyboard */,
-				AAFE17D0224D0B7E00486D7F /* Assets.xcassets */,
-				AAFE17D2224D0B7E00486D7F /* LaunchScreen.storyboard */,
-				AAFE17D5224D0B7E00486D7F /* Info.plist */,
-				AAFE17D6224D0B7E00486D7F /* main.m */,
+				AAFE17E1224D0CD500486D7F /* Modules */,
+				AAFE17DD224D0C3300486D7F /* Other */,
 			);
 			path = Movies;
+			sourceTree = "<group>";
+		};
+		AAFE17DD224D0C3300486D7F /* Other */ = {
+			isa = PBXGroup;
+			children = (
+				AAFE17DE224D0C3E00486D7F /* App */,
+				AAFE17DF224D0C4400486D7F /* Config */,
+				AAFE17E0224D0C7900486D7F /* Resources */,
+			);
+			path = Other;
+			sourceTree = "<group>";
+		};
+		AAFE17DE224D0C3E00486D7F /* App */ = {
+			isa = PBXGroup;
+			children = (
+				AAFE17C7224D0B7C00486D7F /* AppDelegate.h */,
+				AAFE17C8224D0B7C00486D7F /* AppDelegate.m */,
+				AAFE17D6224D0B7E00486D7F /* main.m */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		AAFE17DF224D0C4400486D7F /* Config */ = {
+			isa = PBXGroup;
+			children = (
+				AAFE17D5224D0B7E00486D7F /* Info.plist */,
+			);
+			path = Config;
+			sourceTree = "<group>";
+		};
+		AAFE17E0224D0C7900486D7F /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				AAFE17D2224D0B7E00486D7F /* LaunchScreen.storyboard */,
+				AAFE17D0224D0B7E00486D7F /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		AAFE17E1224D0CD500486D7F /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				AAFE17E2224D0D0900486D7F /* Controllers */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		AAFE17E2224D0D0900486D7F /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				AAFE17CA224D0B7C00486D7F /* EKPopularMoviesViewController.h */,
+				AAFE17CB224D0B7C00486D7F /* EKPopularMoviesViewController.m */,
+			);
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -130,7 +175,6 @@
 			files = (
 				AAFE17D4224D0B7E00486D7F /* LaunchScreen.storyboard in Resources */,
 				AAFE17D1224D0B7E00486D7F /* Assets.xcassets in Resources */,
-				AAFE17CF224D0B7C00486D7F /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -141,7 +185,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AAFE17CC224D0B7C00486D7F /* ViewController.m in Sources */,
+				AAFE17CC224D0B7C00486D7F /* EKPopularMoviesViewController.m in Sources */,
 				AAFE17D7224D0B7E00486D7F /* main.m in Sources */,
 				AAFE17C9224D0B7C00486D7F /* AppDelegate.m in Sources */,
 			);
@@ -150,14 +194,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		AAFE17CD224D0B7C00486D7F /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				AAFE17CE224D0B7C00486D7F /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		AAFE17D2224D0B7E00486D7F /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -287,7 +323,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = TDR3533VJS;
-				INFOPLIST_FILE = Movies/Info.plist;
+				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
+				INFOPLIST_FILE = "$(SRCROOT)/Movies/Other/Config/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -304,7 +341,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = TDR3533VJS;
-				INFOPLIST_FILE = Movies/Info.plist;
+				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
+				INFOPLIST_FILE = "$(SRCROOT)/Movies/Other/Config/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

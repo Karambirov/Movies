@@ -10,7 +10,8 @@
 
 @interface EKNetworkingService : NSObject
 
-+ (NSMutableURLRequest *)createGetRequestForPath:(NSString *)path withQueryItems:(NSArray<NSURLQueryItem *> *)queryItems;
++ (NSURL *)createUrlWithPath:(NSString *)path withQueryItems:(NSArray<NSURLQueryItem *> *)queryItems;
++ (NSMutableURLRequest *)createRequestWithMethod:(NSString *)method forURL:(NSURL *)url;
 + (void)executeRequest:(NSURLRequest *)request withCompletionHandler:(void (^)(id responseData, NSError *error))completionHandler;
 
 @end

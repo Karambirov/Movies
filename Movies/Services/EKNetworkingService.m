@@ -13,20 +13,26 @@ NSString * const baseUrlString = @"https://api.themoviedb.org";
 
 @implementation EKNetworkingService
 
-+ (NSMutableURLRequest *)createGetRequestForPath:(NSString *)path withQueryItems:(NSArray<NSURLQueryItem *> *)queryItems {
++ (NSURL *)createUrlWithPath:(NSString *)path withQueryItems:(NSArray<NSURLQueryItem *> *)queryItems {
     NSURLComponents *urlComponents = [NSURLComponents componentsWithString:baseUrlString];
     urlComponents.path = path;
     urlComponents.queryItems = queryItems;
     NSLog(@"URL: %@", urlComponents.URL);
+    return urlComponents.URL;
+}
 
-    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:urlComponents.URL
++ (NSMutableURLRequest *)createRequestWithMethod:(NSString *)method forURL:(NSURL *)url {
+
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url
                                                            cachePolicy:NSURLRequestReloadIgnoringCacheData
                                                        timeoutInterval:60.0f];
-    [request setHTTPMethod:@"GET"];
+    [request setHTTPMethod:method];
     return request;
+
 }
 
 + (void)executeRequest:(NSURLRequest *)request withCompletionHandler:(void (^)(id responseData, NSError *error))completionHandler {
+
     NSURLSession *session = [NSURLSession sharedSession];
     NSURLSessionDataTask *dataTask = [session dataTaskWithRequest:request
                                                 completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
@@ -52,8 +58,8 @@ NSString * const baseUrlString = @"https://api.themoviedb.org";
         });
 
     }];
-
     [dataTask resume];
+
 }
 
 @end

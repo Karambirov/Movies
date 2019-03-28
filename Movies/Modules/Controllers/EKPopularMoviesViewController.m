@@ -10,21 +10,36 @@
 
 #import "EKPopularMoviesViewController.h"
 #import "EKMovie.h"
+#import "EKMoviesService.h"
 
 NSString * const cellIdentifier = @"PopularMovieCell";
 
 @interface EKPopularMoviesViewController () <UITableViewDataSource, UITableViewDelegate>
 @property (nonatomic) UITableView *tableView;
+@property (nonatomic) EKMoviesService *moviesService;
 @property (nonatomic) NSArray<EKMovie *> *movies;
 @end
 
 @implementation EKPopularMoviesViewController
 
 #pragma mark - Life cycle
+- (instancetype)init {
+    self = [super init];
+    if (!self) return nil;
+
+    self.moviesService = [[EKMoviesService alloc] initWithNetworkingService:[EKNetworkingService new]];
+    return self;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self initialSetup];
-//    [self fetchPopularMovies];
+
+    dispatch_async(dispatch_get_main_queue(), ^{
+        self.movies = [self.moviesService fetchPopularMovies];
+        [self.tableView reloadData];
+    });
+
 }
 
 #pragma mark - TableView

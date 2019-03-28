@@ -11,7 +11,7 @@
 NSString * const kDiscoverMoviePath = @"/3/discover/movie";
 
 @interface EKMoviesService ()
-@property (nonatomic, weak) EKNetworkingService* networkingService;
+@property (nonatomic) EKNetworkingService* networkingService;
 @end
 
 @implementation EKMoviesService

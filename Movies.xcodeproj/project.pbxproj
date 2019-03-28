@@ -12,6 +12,7 @@
 		AAFE17D1224D0B7E00486D7F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AAFE17D0224D0B7E00486D7F /* Assets.xcassets */; };
 		AAFE17D4224D0B7E00486D7F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AAFE17D2224D0B7E00486D7F /* LaunchScreen.storyboard */; };
 		AAFE17D7224D0B7E00486D7F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = AAFE17D6224D0B7E00486D7F /* main.m */; };
+		AAFE17E6224D1A1E00486D7F /* EKMovie.m in Sources */ = {isa = PBXBuildFile; fileRef = AAFE17E5224D1A1E00486D7F /* EKMovie.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,8 @@
 		AAFE17D3224D0B7E00486D7F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AAFE17D5224D0B7E00486D7F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AAFE17D6224D0B7E00486D7F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		AAFE17E4224D1A1E00486D7F /* EKMovie.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EKMovie.h; sourceTree = "<group>"; };
+		AAFE17E5224D1A1E00486D7F /* EKMovie.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EKMovie.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +59,7 @@
 		AAFE17C6224D0B7C00486D7F /* Movies */ = {
 			isa = PBXGroup;
 			children = (
+				AAFE17E3224D1A0400486D7F /* Models */,
 				AAFE17E1224D0CD500486D7F /* Modules */,
 				AAFE17DD224D0C3300486D7F /* Other */,
 			);
@@ -114,6 +118,15 @@
 				AAFE17CB224D0B7C00486D7F /* EKPopularMoviesViewController.m */,
 			);
 			path = Controllers;
+			sourceTree = "<group>";
+		};
+		AAFE17E3224D1A0400486D7F /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				AAFE17E4224D1A1E00486D7F /* EKMovie.h */,
+				AAFE17E5224D1A1E00486D7F /* EKMovie.m */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -185,6 +198,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AAFE17E6224D1A1E00486D7F /* EKMovie.m in Sources */,
 				AAFE17CC224D0B7C00486D7F /* EKPopularMoviesViewController.m in Sources */,
 				AAFE17D7224D0B7E00486D7F /* main.m in Sources */,
 				AAFE17C9224D0B7C00486D7F /* AppDelegate.m in Sources */,

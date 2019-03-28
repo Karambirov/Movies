@@ -20,7 +20,7 @@
 #pragma mark - Life cycle
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    [self initialSetup];
 }
 
 #pragma mark - TableView
@@ -35,9 +35,15 @@
 
 #pragma mark - Setup
 - (void)initialSetup {
+    self.tableView = [UITableView new];
+    self.tableView.backgroundColor = UIColor.whiteColor;
+    self.tableView.translatesAutoresizingMaskIntoConstraints = NO;
+
     [self.view addSubview:self.tableView];
     [self.tableView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.edges.equalTo(self.view.mas_safeAreaLayoutGuide);
+//        Find out why constraining to Safe Area doesn't work.
+//        make.edges.equalTo(self.view.mas_safeAreaLayoutGuide);
+        make.edges.equalTo(self.view);
     }];
 }
 

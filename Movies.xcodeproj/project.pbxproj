@@ -14,6 +14,7 @@
 		AAFE17D7224D0B7E00486D7F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = AAFE17D6224D0B7E00486D7F /* main.m */; };
 		AAFE17E6224D1A1E00486D7F /* EKMovie.m in Sources */ = {isa = PBXBuildFile; fileRef = AAFE17E5224D1A1E00486D7F /* EKMovie.m */; };
 		AAFE17EA224D5F9B00486D7F /* EKNetworkingService.m in Sources */ = {isa = PBXBuildFile; fileRef = AAFE17E9224D5F9B00486D7F /* EKNetworkingService.m */; };
+		AAFE17ED224D6E1800486D7F /* EKMoviesService.m in Sources */ = {isa = PBXBuildFile; fileRef = AAFE17EC224D6E1800486D7F /* EKMoviesService.m */; };
 		E0E20D434EC33C2716EA8A10 /* libPods-Movies.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 609AED2461BE4389B776AE74 /* libPods-Movies.a */; };
 /* End PBXBuildFile section */
 
@@ -33,6 +34,8 @@
 		AAFE17E5224D1A1E00486D7F /* EKMovie.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EKMovie.m; sourceTree = "<group>"; };
 		AAFE17E8224D5F9B00486D7F /* EKNetworkingService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EKNetworkingService.h; sourceTree = "<group>"; };
 		AAFE17E9224D5F9B00486D7F /* EKNetworkingService.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EKNetworkingService.m; sourceTree = "<group>"; };
+		AAFE17EB224D6E1800486D7F /* EKMoviesService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EKMoviesService.h; sourceTree = "<group>"; };
+		AAFE17EC224D6E1800486D7F /* EKMoviesService.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EKMoviesService.m; sourceTree = "<group>"; };
 		E83C6D8B22E3697789EDA4EF /* Pods-Movies.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Movies.debug.xcconfig"; path = "Target Support Files/Pods-Movies/Pods-Movies.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -162,6 +165,8 @@
 			children = (
 				AAFE17E8224D5F9B00486D7F /* EKNetworkingService.h */,
 				AAFE17E9224D5F9B00486D7F /* EKNetworkingService.m */,
+				AAFE17EB224D6E1800486D7F /* EKMoviesService.h */,
+				AAFE17EC224D6E1800486D7F /* EKMoviesService.m */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -263,6 +268,7 @@
 			files = (
 				AAFE17E6224D1A1E00486D7F /* EKMovie.m in Sources */,
 				AAFE17CC224D0B7C00486D7F /* EKPopularMoviesViewController.m in Sources */,
+				AAFE17ED224D6E1800486D7F /* EKMoviesService.m in Sources */,
 				AAFE17EA224D5F9B00486D7F /* EKNetworkingService.m in Sources */,
 				AAFE17D7224D0B7E00486D7F /* main.m in Sources */,
 				AAFE17C9224D0B7C00486D7F /* AppDelegate.m in Sources */,

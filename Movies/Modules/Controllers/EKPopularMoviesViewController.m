@@ -7,8 +7,11 @@
 //
 
 #import "EKPopularMoviesViewController.h"
+#import "Masonry/Masonry.h"
 
 @interface EKPopularMoviesViewController () <UITableViewDataSource, UITableViewDelegate>
+
+@property (nonatomic) UITableView *tableView;
 
 @end
 
@@ -28,6 +31,14 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [UITableViewCell new];
     return cell;
+}
+
+#pragma mark - Setup
+- (void)initialSetup {
+    [self.view addSubview:self.tableView];
+    [self.tableView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.edges.equalTo(self.view.mas_safeAreaLayoutGuide);
+    }];
 }
 
 @end

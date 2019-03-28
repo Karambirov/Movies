@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "EKPopularMoviesViewController.h"
 
 @interface AppDelegate ()
 
@@ -16,7 +17,14 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+
+    self.window = [[UIWindow alloc] initWithFrame:UIScreen.mainScreen.bounds];
+
+    EKPopularMoviesViewController *popularMoviesViewController = [EKPopularMoviesViewController new];
+    UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:popularMoviesViewController];
+    self.window.rootViewController = navigationController;
+    [self.window makeKeyAndVisible];
+
     return YES;
 }
 

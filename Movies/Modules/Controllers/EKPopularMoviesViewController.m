@@ -50,9 +50,16 @@ NSString * const cellIdentifier = @"MovieTableViewCell";
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier forIndexPath:indexPath];
-    cell.textLabel.text = self.movies[indexPath.row].title;
+
+    MovieTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
+    if (!cell) {
+        UINib *nib = [UINib nibWithNibName:cellIdentifier bundle:nil];
+        [tableView registerNib:nib forCellReuseIdentifier:cellIdentifier];
+        cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
+    }
+    [cell setupWithMovie:self.movies[indexPath.row]];
     return cell;
+
 }
 
 #pragma mark - Setup
@@ -70,7 +77,6 @@ NSString * const cellIdentifier = @"MovieTableViewCell";
     self.tableView.backgroundColor = UIColor.whiteColor;
     self.tableView.translatesAutoresizingMaskIntoConstraints = NO;
 
-    [self.tableView registerClass:MovieTableViewCell.class forCellReuseIdentifier:cellIdentifier];
     [self.view addSubview:self.tableView];
     [self.tableView mas_makeConstraints:^(MASConstraintMaker *make) {
         //        Find out why constraining to Safe Area doesn't work.

@@ -26,7 +26,7 @@
         }
 
         if (dictionary[@"vote_average"]) {
-            self.voteAverage = dictionary[@"vote_average"];
+            self.voteAverage = [NSString stringWithFormat:@"%@", dictionary[@"vote_average"]];
         }
     }
 

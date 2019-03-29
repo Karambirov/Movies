@@ -14,4 +14,6 @@
 - (NSMutableURLRequest *)createRequestWithMethod:(NSString *)method forURL:(NSURL *)url;
 - (void)executeRequest:(NSURLRequest *)request withCompletionHandler:(void (^)(id responseData, NSError *error))completionHandler;
 
++ (NSURL *)createImageUrlForPath:(NSString *)path;
+
 @end

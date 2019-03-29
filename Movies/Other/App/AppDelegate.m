@@ -20,6 +20,8 @@
 
     self.window = [[UIWindow alloc] initWithFrame:UIScreen.mainScreen.bounds];
 
+    self.window.tintColor = [UIColor colorNamed:@"tintColor"];
+
     EKPopularMoviesViewController *popularMoviesViewController = [EKPopularMoviesViewController new];
     UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:popularMoviesViewController];
     self.window.rootViewController = navigationController;

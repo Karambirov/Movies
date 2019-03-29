@@ -7,5 +7,6 @@ target 'Movies' do
 
   # Pods for Movies
   pod 'Masonry'
+  pod 'SDWebImage'
 
 end

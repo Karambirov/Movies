@@ -17,6 +17,7 @@ NSString * const cellIdentifier = @"MovieTableViewCell";
 
 @interface EKPopularMoviesViewController () <UITableViewDataSource, UITableViewDelegate>
 @property (nonatomic) UITableView *tableView;
+@property (nonatomic) UIActivityIndicatorView *activityIndicatorView;
 @property (nonatomic) EKMoviesService *moviesService;
 @property (nonatomic) NSArray<EKMovie *> *movies;
 @end
@@ -35,13 +36,15 @@ NSString * const cellIdentifier = @"MovieTableViewCell";
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self initialSetup];
+}
 
+- (void)viewWillAppear:(BOOL)animated {
     [self.moviesService fetchPopularMoviesWithCompletionHandler:^(NSArray<EKMovie *> *movies) {
         self.movies = movies;
+        [self.activityIndicatorView stopAnimating];
         [self.tableView reloadData];
     }];
-
-
+    [super viewWillAppear:animated];
 }
 
 #pragma mark - TableView
@@ -65,23 +68,36 @@ NSString * const cellIdentifier = @"MovieTableViewCell";
 #pragma mark - Setup
 - (void)initialSetup {
     self.title = @"Popular";
+    [self setupActivityIndicatorView];
     [self setupTableView];
+    [self setupConstraints];
 }
 
 - (void)setupTableView {
     self.tableView = [UITableView new];
+    self.tableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
+    self.tableView.backgroundColor = UIColor.whiteColor;
 
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
+}
 
-    self.tableView.backgroundColor = UIColor.whiteColor;
-    self.tableView.translatesAutoresizingMaskIntoConstraints = NO;
+- (void)setupActivityIndicatorView {
+    self.activityIndicatorView = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
+    [self.activityIndicatorView startAnimating];
+}
 
+- (void)setupConstraints {
     [self.view addSubview:self.tableView];
     [self.tableView mas_makeConstraints:^(MASConstraintMaker *make) {
         //        Find out why constraining to Safe Area doesn't work.
         //        make.edges.equalTo(self.view.mas_safeAreaLayoutGuide);
         make.edges.equalTo(self.view);
+    }];
+
+    [self.tableView addSubview:self.activityIndicatorView];
+    [self.activityIndicatorView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.center.equalTo(self.view);
     }];
 }
 

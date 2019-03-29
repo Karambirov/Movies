@@ -26,9 +26,7 @@ NSString * const kDiscoverMoviePath = @"/3/discover/movie";
 
 }
 
-- (NSArray<EKMovie *> *)fetchPopularMovies {
-
-    NSArray<EKMovie *> __block *movies;
+- (void)fetchPopularMoviesWithCompletionHandler:(void (^)(NSArray<EKMovie *> *movies))completionHandler {
 
     NSArray<NSURLQueryItem *> *queryItems = @[[NSURLQueryItem queryItemWithName:@"sort_by" value:@"popularity.desc"]];
     NSURL* url = [self.networkingService createUrlWithPath:kDiscoverMoviePath withQueryItems:queryItems];
@@ -37,6 +35,7 @@ NSString * const kDiscoverMoviePath = @"/3/discover/movie";
     [self.networkingService executeRequest:request withCompletionHandler:^(id responseData, NSError *error) {
         if (error) {
             NSLog(@"Network error occurred: %@", [error localizedDescription]);
+            completionHandler(nil);
             return;
         }
 
@@ -45,13 +44,14 @@ NSString * const kDiscoverMoviePath = @"/3/discover/movie";
 
         if (parsingError) {
             NSLog(@"An error occured: %@", [parsingError localizedDescription]);
+            completionHandler(nil);
             return;
         }
 
-        movies = [EKMovie moviesFromDictionaries:json[@"results"]];
+        dispatch_async(dispatch_get_main_queue(), ^(){
+            completionHandler([EKMovie moviesFromDictionaries:json[@"results"]]);
+        });
     }];
-
-    return movies;
 
 }
 

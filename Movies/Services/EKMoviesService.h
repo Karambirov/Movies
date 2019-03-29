@@ -13,7 +13,7 @@
 @interface EKMoviesService : NSObject
 
 - (instancetype)initWithNetworkingService:(EKNetworkingService *)networkingService;
-- (NSArray<EKMovie *> *)fetchPopularMovies;
+- (void)fetchPopularMoviesWithCompletionHandler:(void (^)(NSArray<EKMovie *> *movies))completionHandler;
 
 @end
 

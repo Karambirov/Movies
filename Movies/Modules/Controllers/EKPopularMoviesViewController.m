@@ -35,10 +35,11 @@ NSString * const cellIdentifier = @"PopularMovieCell";
     [super viewDidLoad];
     [self initialSetup];
 
-    dispatch_async(dispatch_get_main_queue(), ^{
-        self.movies = [self.moviesService fetchPopularMovies];
+    [self.moviesService fetchPopularMoviesWithCompletionHandler:^(NSArray<EKMovie *> *movies) {
+        self.movies = movies;
         [self.tableView reloadData];
-    });
+    }];
+
 
 }
 

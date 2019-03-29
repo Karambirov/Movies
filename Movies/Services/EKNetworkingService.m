@@ -54,9 +54,7 @@ NSString * const baseUrlString = @"https://api.themoviedb.org";
             }
         }
 
-        dispatch_async(dispatch_get_main_queue(), ^(void){
-            completionHandler(data, nil);
-        });
+        completionHandler(data, nil);
 
     }];
     [dataTask resume];

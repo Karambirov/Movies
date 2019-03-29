@@ -11,8 +11,9 @@
 #import "EKPopularMoviesViewController.h"
 #import "EKMovie.h"
 #import "EKMoviesService.h"
+#import "MovieTableViewCell.h"
 
-NSString * const cellIdentifier = @"PopularMovieCell";
+NSString * const cellIdentifier = @"MovieTableViewCell";
 
 @interface EKPopularMoviesViewController () <UITableViewDataSource, UITableViewDelegate>
 @property (nonatomic) UITableView *tableView;
@@ -69,7 +70,7 @@ NSString * const cellIdentifier = @"PopularMovieCell";
     self.tableView.backgroundColor = UIColor.whiteColor;
     self.tableView.translatesAutoresizingMaskIntoConstraints = NO;
 
-    [self.tableView registerClass:UITableViewCell.class forCellReuseIdentifier:cellIdentifier];
+    [self.tableView registerClass:MovieTableViewCell.class forCellReuseIdentifier:cellIdentifier];
     [self.view addSubview:self.tableView];
     [self.tableView mas_makeConstraints:^(MASConstraintMaker *make) {
         //        Find out why constraining to Safe Area doesn't work.

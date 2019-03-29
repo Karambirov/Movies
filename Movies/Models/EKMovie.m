@@ -16,6 +16,18 @@
         if (dictionary[@"title"]) {
             self.title = dictionary[@"title"];
         }
+
+        if (dictionary[@"overview"]) {
+            self.overview = dictionary[@"overview"];
+        }
+
+        if (dictionary[@"poster_path"]) {
+            self.posterPath = dictionary[@"poster_path"];
+        }
+
+        if (dictionary[@"vote_average"]) {
+            self.voteAverage = [NSString stringWithFormat:@"%@", dictionary[@"vote_average"]];
+        }
     }
 
     return self;

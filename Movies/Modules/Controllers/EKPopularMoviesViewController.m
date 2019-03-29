@@ -11,11 +11,13 @@
 #import "EKPopularMoviesViewController.h"
 #import "EKMovie.h"
 #import "EKMoviesService.h"
+#import "MovieTableViewCell.h"
 
-NSString * const cellIdentifier = @"PopularMovieCell";
+NSString * const cellIdentifier = @"MovieTableViewCell";
 
 @interface EKPopularMoviesViewController () <UITableViewDataSource, UITableViewDelegate>
 @property (nonatomic) UITableView *tableView;
+@property (nonatomic) UIActivityIndicatorView *activityIndicatorView;
 @property (nonatomic) EKMoviesService *moviesService;
 @property (nonatomic) NSArray<EKMovie *> *movies;
 @end
@@ -34,13 +36,15 @@ NSString * const cellIdentifier = @"PopularMovieCell";
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self initialSetup];
+}
 
+- (void)viewWillAppear:(BOOL)animated {
     [self.moviesService fetchPopularMoviesWithCompletionHandler:^(NSArray<EKMovie *> *movies) {
         self.movies = movies;
+        [self.activityIndicatorView stopAnimating];
         [self.tableView reloadData];
     }];
-
-
+    [super viewWillAppear:animated];
 }
 
 #pragma mark - TableView
@@ -49,32 +53,51 @@ NSString * const cellIdentifier = @"PopularMovieCell";
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier forIndexPath:indexPath];
-    cell.textLabel.text = self.movies[indexPath.row].title;
+
+    MovieTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
+    if (!cell) {
+        UINib *nib = [UINib nibWithNibName:cellIdentifier bundle:nil];
+        [tableView registerNib:nib forCellReuseIdentifier:cellIdentifier];
+        cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
+    }
+    [cell setupWithMovie:self.movies[indexPath.row]];
     return cell;
+
 }
 
 #pragma mark - Setup
 - (void)initialSetup {
     self.title = @"Popular";
+    [self setupActivityIndicatorView];
     [self setupTableView];
+    [self setupConstraints];
 }
 
 - (void)setupTableView {
     self.tableView = [UITableView new];
+    self.tableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
+    self.tableView.backgroundColor = UIColor.whiteColor;
 
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
+}
 
-    self.tableView.backgroundColor = UIColor.whiteColor;
-    self.tableView.translatesAutoresizingMaskIntoConstraints = NO;
+- (void)setupActivityIndicatorView {
+    self.activityIndicatorView = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
+    [self.activityIndicatorView startAnimating];
+}
 
-    [self.tableView registerClass:UITableViewCell.class forCellReuseIdentifier:cellIdentifier];
+- (void)setupConstraints {
     [self.view addSubview:self.tableView];
     [self.tableView mas_makeConstraints:^(MASConstraintMaker *make) {
         //        Find out why constraining to Safe Area doesn't work.
         //        make.edges.equalTo(self.view.mas_safeAreaLayoutGuide);
         make.edges.equalTo(self.view);
+    }];
+
+    [self.tableView addSubview:self.activityIndicatorView];
+    [self.activityIndicatorView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.center.equalTo(self.view);
     }];
 }
 

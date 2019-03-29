@@ -10,6 +10,7 @@
 
 NSString * const apiKey = @"f5524bb2a3cfdc23a41b80cc6ec1ad4c";
 NSString * const baseUrlString = @"https://api.themoviedb.org";
+NSString * const imageUrl = @"https://image.tmdb.org/t/p/w500";
 
 @implementation EKNetworkingService
 
@@ -59,6 +60,11 @@ NSString * const baseUrlString = @"https://api.themoviedb.org";
     }];
     [dataTask resume];
 
+}
+
++ (NSURL *)createImageUrlForPath:(NSString *)path {
+    NSURL *url = [NSURL URLWithString:[imageUrl stringByAppendingString:path]];
+    return url;
 }
 
 @end

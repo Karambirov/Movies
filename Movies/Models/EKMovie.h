@@ -11,6 +11,9 @@
 @interface EKMovie : NSObject
 
 @property (nonatomic) NSString *title;
+@property (nonatomic) NSString *overview;
+@property (nonatomic) NSString *posterPath;
+@property (nonatomic) NSString *voteAverage;
 
 - (instancetype)initWithDictionary:(NSDictionary *)dictionary;
 

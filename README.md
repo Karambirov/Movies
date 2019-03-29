@@ -6,6 +6,7 @@
 - [x] Show the most popular movies at the moment using [TMDB API](https://developers.themoviedb.org/3/getting-started/introduction).
 
 ## Technologies
+- [x] Service-Oriented Architecture. 
 - [x] Networking is done using `NSURLSession`.
 - [x] JSON parsing using `NSJSONSerialization`.
 - [x] Programmatically UI ([Masonry](https://github.com/SnapKit/Masonry)).

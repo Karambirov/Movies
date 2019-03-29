@@ -16,8 +16,8 @@ NSString * const baseUrlString = @"https://api.themoviedb.org";
 - (NSURL *)createUrlWithPath:(NSString *)path withQueryItems:(NSArray<NSURLQueryItem *> *)queryItems {
     NSURLComponents *urlComponents = [NSURLComponents componentsWithString:baseUrlString];
     urlComponents.path = path;
-    urlComponents.queryItems = @[[NSURLQueryItem queryItemWithName:@"api_key" value:apiKey]];
-    [urlComponents.queryItems arrayByAddingObjectsFromArray:queryItems];
+    urlComponents.queryItems = [@[[NSURLQueryItem queryItemWithName:@"api_key" value:apiKey]]
+                                arrayByAddingObjectsFromArray:queryItems];
     NSLog(@"URL: %@", urlComponents.URL);
     return urlComponents.URL;
 }

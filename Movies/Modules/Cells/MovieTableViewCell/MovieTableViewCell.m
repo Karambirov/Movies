@@ -7,18 +7,28 @@
 //
 
 #import "MovieTableViewCell.h"
+#import "EKMovie.h"
+
+@interface MovieTableViewCell ()
+@property (weak, nonatomic) IBOutlet UIImageView *posterImageView;
+@property (weak, nonatomic) IBOutlet UILabel *titleLabel;
+@property (weak, nonatomic) IBOutlet UILabel *ratingLabel;
+@property (weak, nonatomic) IBOutlet UILabel *overviewLabel;
+@end
 
 @implementation MovieTableViewCell
 
 - (void)awakeFromNib {
     [super awakeFromNib];
-    // Initialization code
+    self.posterImageView.layer.cornerRadius = 5;
+    self.posterImageView.clipsToBounds = YES;
 }
 
-- (void)setSelected:(BOOL)selected animated:(BOOL)animated {
-    [super setSelected:selected animated:animated];
 
-    // Configure the view for the selected state
+
+#pragma mark - Setup
+- (void)setupWithMovie:(EKMovie *)movie {
+    
 }
 
 @end

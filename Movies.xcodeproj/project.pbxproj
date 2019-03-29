@@ -112,9 +112,9 @@
 		AAFE17C6224D0B7C00486D7F /* Movies */ = {
 			isa = PBXGroup;
 			children = (
+				AAFE17E1224D0CD500486D7F /* Modules */,
 				AAFE17E7224D5F8500486D7F /* Services */,
 				AAFE17E3224D1A0400486D7F /* Models */,
-				AAFE17E1224D0CD500486D7F /* Modules */,
 				AAFE17DD224D0C3300486D7F /* Other */,
 			);
 			path = Movies;

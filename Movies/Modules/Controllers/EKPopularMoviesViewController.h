@@ -10,6 +10,4 @@
 
 @interface EKPopularMoviesViewController : UIViewController
 
-
 @end
-

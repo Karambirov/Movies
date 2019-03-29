@@ -12,9 +12,15 @@
 		AAFE17D1224D0B7E00486D7F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AAFE17D0224D0B7E00486D7F /* Assets.xcassets */; };
 		AAFE17D4224D0B7E00486D7F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AAFE17D2224D0B7E00486D7F /* LaunchScreen.storyboard */; };
 		AAFE17D7224D0B7E00486D7F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = AAFE17D6224D0B7E00486D7F /* main.m */; };
+		AAFE17E6224D1A1E00486D7F /* EKMovie.m in Sources */ = {isa = PBXBuildFile; fileRef = AAFE17E5224D1A1E00486D7F /* EKMovie.m */; };
+		AAFE17EA224D5F9B00486D7F /* EKNetworkingService.m in Sources */ = {isa = PBXBuildFile; fileRef = AAFE17E9224D5F9B00486D7F /* EKNetworkingService.m */; };
+		AAFE17ED224D6E1800486D7F /* EKMoviesService.m in Sources */ = {isa = PBXBuildFile; fileRef = AAFE17EC224D6E1800486D7F /* EKMoviesService.m */; };
+		E0E20D434EC33C2716EA8A10 /* libPods-Movies.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 609AED2461BE4389B776AE74 /* libPods-Movies.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		609AED2461BE4389B776AE74 /* libPods-Movies.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Movies.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		887FA78712C6FCDF0EE21E94 /* Pods-Movies.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Movies.release.xcconfig"; path = "Target Support Files/Pods-Movies/Pods-Movies.release.xcconfig"; sourceTree = "<group>"; };
 		AAFE17C4224D0B7C00486D7F /* Movies.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Movies.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AAFE17C7224D0B7C00486D7F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		AAFE17C8224D0B7C00486D7F /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -24,6 +30,13 @@
 		AAFE17D3224D0B7E00486D7F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AAFE17D5224D0B7E00486D7F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AAFE17D6224D0B7E00486D7F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		AAFE17E4224D1A1E00486D7F /* EKMovie.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EKMovie.h; sourceTree = "<group>"; };
+		AAFE17E5224D1A1E00486D7F /* EKMovie.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EKMovie.m; sourceTree = "<group>"; };
+		AAFE17E8224D5F9B00486D7F /* EKNetworkingService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EKNetworkingService.h; sourceTree = "<group>"; };
+		AAFE17E9224D5F9B00486D7F /* EKNetworkingService.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EKNetworkingService.m; sourceTree = "<group>"; };
+		AAFE17EB224D6E1800486D7F /* EKMoviesService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EKMoviesService.h; sourceTree = "<group>"; };
+		AAFE17EC224D6E1800486D7F /* EKMoviesService.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EKMoviesService.m; sourceTree = "<group>"; };
+		E83C6D8B22E3697789EDA4EF /* Pods-Movies.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Movies.debug.xcconfig"; path = "Target Support Files/Pods-Movies/Pods-Movies.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,17 +44,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E0E20D434EC33C2716EA8A10 /* libPods-Movies.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		086E982B0854CBAE25085049 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				609AED2461BE4389B776AE74 /* libPods-Movies.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		4E44477F37C5F134A89F8AE9 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				E83C6D8B22E3697789EDA4EF /* Pods-Movies.debug.xcconfig */,
+				887FA78712C6FCDF0EE21E94 /* Pods-Movies.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		AAFE17BB224D0B7C00486D7F = {
 			isa = PBXGroup;
 			children = (
 				AAFE17C6224D0B7C00486D7F /* Movies */,
 				AAFE17C5224D0B7C00486D7F /* Products */,
+				4E44477F37C5F134A89F8AE9 /* Pods */,
+				086E982B0854CBAE25085049 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -56,6 +89,8 @@
 		AAFE17C6224D0B7C00486D7F /* Movies */ = {
 			isa = PBXGroup;
 			children = (
+				AAFE17E7224D5F8500486D7F /* Services */,
+				AAFE17E3224D1A0400486D7F /* Models */,
 				AAFE17E1224D0CD500486D7F /* Modules */,
 				AAFE17DD224D0C3300486D7F /* Other */,
 			);
@@ -116,6 +151,26 @@
 			path = Controllers;
 			sourceTree = "<group>";
 		};
+		AAFE17E3224D1A0400486D7F /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				AAFE17E4224D1A1E00486D7F /* EKMovie.h */,
+				AAFE17E5224D1A1E00486D7F /* EKMovie.m */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		AAFE17E7224D5F8500486D7F /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				AAFE17E8224D5F9B00486D7F /* EKNetworkingService.h */,
+				AAFE17E9224D5F9B00486D7F /* EKNetworkingService.m */,
+				AAFE17EB224D6E1800486D7F /* EKMoviesService.h */,
+				AAFE17EC224D6E1800486D7F /* EKMoviesService.m */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -123,6 +178,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = AAFE17DA224D0B7E00486D7F /* Build configuration list for PBXNativeTarget "Movies" */;
 			buildPhases = (
+				77730FBC0D76934E7D761AEA /* [CP] Check Pods Manifest.lock */,
 				AAFE17C0224D0B7C00486D7F /* Sources */,
 				AAFE17C1224D0B7C00486D7F /* Frameworks */,
 				AAFE17C2224D0B7C00486D7F /* Resources */,
@@ -180,12 +236,40 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		77730FBC0D76934E7D761AEA /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Movies-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		AAFE17C0224D0B7C00486D7F /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AAFE17E6224D1A1E00486D7F /* EKMovie.m in Sources */,
 				AAFE17CC224D0B7C00486D7F /* EKPopularMoviesViewController.m in Sources */,
+				AAFE17ED224D6E1800486D7F /* EKMoviesService.m in Sources */,
+				AAFE17EA224D5F9B00486D7F /* EKNetworkingService.m in Sources */,
 				AAFE17D7224D0B7E00486D7F /* main.m in Sources */,
 				AAFE17C9224D0B7C00486D7F /* AppDelegate.m in Sources */,
 			);
@@ -319,6 +403,7 @@
 		};
 		AAFE17DB224D0B7E00486D7F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E83C6D8B22E3697789EDA4EF /* Pods-Movies.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -337,6 +422,7 @@
 		};
 		AAFE17DC224D0B7E00486D7F /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 887FA78712C6FCDF0EE21E94 /* Pods-Movies.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

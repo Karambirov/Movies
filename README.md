@@ -2,7 +2,7 @@
 <p align="center">
   <img src = "https://user-images.githubusercontent.com/6949755/55233500-e29c0500-5239-11e9-8ce9-bd23db71522f.png" width="200"/>
 
-## App Features
+## Features
 - [x] Show the most popular movies at the moment using [TMDB API](https://developers.themoviedb.org/3/getting-started/introduction).
 
 ## Technologies
